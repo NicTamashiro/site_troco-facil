@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Fluxograma – Cálculo de Troco</title>
+<style>
+  body {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+<svg width="1020" height="1340" viewBox="0 0 1020 1340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- TÍTULO -->
+  <text x="510" y="30" text-anchor="middle" font-family="Arial" font-size="20" fill="#333">Cálculo de Troco</text>
+  <text x="510" y="50" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">(notas e moedas)</text>
+
+  <!-- ── INÍCIO ── -->
+  <rect x="390" y="64" width="160" height="44" rx="22"
+        fill="#f9c9c5" stroke="#d98880" stroke-width="1.5"/>
+  <text x="470" y="91" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Início</text>
+
+  <line x1="470" y1="108" x2="470" y2="132" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── LEIA ── -->
+  <polygon points="280,132 660,132 680,156 660,180 280,180 260,156"
+           fill="#d6e8f8" stroke="#88aad0" stroke-width="1.5"/>
+  <text x="470" y="161" text-anchor="middle" font-family="Arial" font-size="13" fill="#333">"Digite o valor:"  →  leia(valor)</text>
+
+  <line x1="470" y1="180" x2="470" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── LOSANGO 1: inválido (letras)? ── -->
+  <polygon points="470,210 630,258 470,306 310,258"
+           fill="#fff3cc" stroke="#c8a000" stroke-width="1.5"/>
+  <text x="470" y="252" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Entrada inválida</text>
+  <text x="470" y="268" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">(letras)?</text>
+
+  <!-- Sim → direita -->
+  <line x1="630" y1="258" x2="730" y2="258" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="676" y="250" text-anchor="middle" font-family="Arial" font-size="11" fill="#c00">Sim</text>
+  <rect x="730" y="232" width="242" height="52" rx="4"
+        fill="#fde8e8" stroke="#d08080" stroke-width="1.5"/>
+  <text x="851" y="253" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">"Erro: apenas números</text>
+  <text x="851" y="271" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">são permitidos."  →  Fim</text>
+
+  <!-- Não → baixo -->
+  <line x1="470" y1="306" x2="470" y2="336" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="482" y="326" font-family="Arial" font-size="11" fill="#080">Não</text>
+
+  <!-- ── LOSANGO 2: valor <= 0? ── -->
+  <polygon points="470,336 630,384 470,432 310,384"
+           fill="#fff3cc" stroke="#c8a000" stroke-width="1.5"/>
+  <text x="470" y="389" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">valor &lt;= 0?</text>
+
+  <!-- Sim → direita -->
+  <line x1="630" y1="384" x2="730" y2="384" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="676" y="376" text-anchor="middle" font-family="Arial" font-size="11" fill="#c00">Sim</text>
+  <rect x="730" y="358" width="242" height="52" rx="4"
+        fill="#fde8e8" stroke="#d08080" stroke-width="1.5"/>
+  <text x="851" y="379" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">"Erro: valor deve ser</text>
+  <text x="851" y="397" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">maior que zero."  →  Fim</text>
+
+  <!-- Não → baixo -->
+  <line x1="470" y1="432" x2="470" y2="462" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="482" y="452" font-family="Arial" font-size="11" fill="#080">Não</text>
+
+  <!-- ── n ← int(...) ── -->
+  <rect x="290" y="462" width="360" height="46" rx="4"
+        fill="#e8d8f8" stroke="#aa88d8" stroke-width="1.5"/>
+  <text x="470" y="480" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">n ← int(valor × 100 + 0,5)</text>
+  <text x="470" y="498" text-anchor="middle" font-family="Arial" font-size="10" fill="#888">(converte para centavos inteiros)</text>
+
+  <line x1="470" y1="508" x2="470" y2="532" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── CÁLCULO DAS NOTAS ── -->
+  <rect x="150" y="532" width="640" height="192" rx="4"
+        fill="#e8d8f8" stroke="#aa88d8" stroke-width="1.5"/>
+  <text x="470" y="550" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#5030a0">CÁLCULO DAS NOTAS</text>
+  <line x1="150" y1="556" x2="790" y2="556" stroke="#aa88d8" stroke-width="0.8"/>
+  <text x="162" y="572" font-family="Courier New" font-size="10.5" fill="#333">notas200 ← n div 20000 ;  n ← n mod 20000</text>
+  <text x="162" y="590" font-family="Courier New" font-size="10.5" fill="#333">notas100 ← n div 10000 ;  n ← n mod 10000</text>
+  <text x="162" y="608" font-family="Courier New" font-size="10.5" fill="#333">notas50  ← n div 5000  ;  n ← n mod 5000</text>
+  <text x="162" y="626" font-family="Courier New" font-size="10.5" fill="#333">notas20  ← n div 2000  ;  n ← n mod 2000</text>
+  <text x="162" y="644" font-family="Courier New" font-size="10.5" fill="#333">notas10  ← n div 1000  ;  n ← n mod 1000</text>
+  <text x="162" y="662" font-family="Courier New" font-size="10.5" fill="#333">notas5   ← n div 500   ;  n ← n mod 500</text>
+  <text x="162" y="680" font-family="Courier New" font-size="10.5" fill="#333">notas2   ← n div 200   ;  n ← n mod 200</text>
+  <text x="162" y="712" font-family="Courier New" font-size="10" fill="#888" font-style="italic">(guarda o quociente; n recebe o resto para a próxima denominação)</text>
+
+  <line x1="470" y1="724" x2="470" y2="748" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── CÁLCULO DAS MOEDAS ── -->
+  <rect x="150" y="748" width="640" height="156" rx="4"
+        fill="#e8d8f8" stroke="#aa88d8" stroke-width="1.5"/>
+  <text x="470" y="766" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#5030a0">CÁLCULO DAS MOEDAS</text>
+  <line x1="150" y1="772" x2="790" y2="772" stroke="#aa88d8" stroke-width="0.8"/>
+  <text x="162" y="788" font-family="Courier New" font-size="10.5" fill="#333">moedas1   ← n div 100  ;  n ← n mod 100</text>
+  <text x="162" y="806" font-family="Courier New" font-size="10.5" fill="#333">moedas050 ← n div 50   ;  n ← n mod 50</text>
+  <text x="162" y="824" font-family="Courier New" font-size="10.5" fill="#333">moedas025 ← n div 25   ;  n ← n mod 25</text>
+  <text x="162" y="842" font-family="Courier New" font-size="10.5" fill="#333">moedas010 ← n div 10   ;  n ← n mod 10</text>
+  <text x="162" y="860" font-family="Courier New" font-size="10.5" fill="#333">moedas005 ← n div 5    ;  n ← n mod 5</text>
+  <text x="162" y="878" font-family="Courier New" font-size="10.5" fill="#333">moedas001 ← n</text>
+
+  <line x1="470" y1="904" x2="470" y2="928" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── ESCREVA ── -->
+  <polygon points="170,928 770,928 790,1082 770,1236 170,1236 150,1082"
+           fill="#d6e8f8" stroke="#88aad0" stroke-width="1.5"/>
+  <text x="470" y="948" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#1050a0">ESCREVA  (somente denominações &gt; 0)</text>
+  <line x1="172" y1="954" x2="768" y2="954" stroke="#88aad0" stroke-width="0.8"/>
+  <text x="184" y="972"  font-family="Courier New" font-size="10.5" fill="#333">se notas200  &gt; 0: escreva notas200,  " nota(s) de R$ 200,00"</text>
+  <text x="184" y="990"  font-family="Courier New" font-size="10.5" fill="#333">se notas100  &gt; 0: escreva notas100,  " nota(s) de R$ 100,00"</text>
+  <text x="184" y="1008" font-family="Courier New" font-size="10.5" fill="#333">se notas50   &gt; 0: escreva notas50,   " nota(s) de R$ 50,00"</text>
+  <text x="184" y="1026" font-family="Courier New" font-size="10.5" fill="#333">se notas20   &gt; 0: escreva notas20,   " nota(s) de R$ 20,00"</text>
+  <text x="184" y="1044" font-family="Courier New" font-size="10.5" fill="#333">se notas10   &gt; 0: escreva notas10,   " nota(s) de R$ 10,00"</text>
+  <text x="184" y="1062" font-family="Courier New" font-size="10.5" fill="#333">se notas5    &gt; 0: escreva notas5,    " nota(s) de R$ 5,00"</text>
+  <text x="184" y="1080" font-family="Courier New" font-size="10.5" fill="#333">se notas2    &gt; 0: escreva notas2,    " nota(s) de R$ 2,00"</text>
+  <text x="184" y="1098" font-family="Courier New" font-size="10.5" fill="#333">se moedas1   &gt; 0: escreva moedas1,   " moeda(s) de R$ 1,00"</text>
+  <text x="184" y="1116" font-family="Courier New" font-size="10.5" fill="#333">se moedas050 &gt; 0: escreva moedas050, " moeda(s) de R$ 0,50"</text>
+  <text x="184" y="1134" font-family="Courier New" font-size="10.5" fill="#333">se moedas025 &gt; 0: escreva moedas025, " moeda(s) de R$ 0,25"</text>
+  <text x="184" y="1152" font-family="Courier New" font-size="10.5" fill="#333">se moedas010 &gt; 0: escreva moedas010, " moeda(s) de R$ 0,10"</text>
+  <text x="184" y="1170" font-family="Courier New" font-size="10.5" fill="#333">se moedas005 &gt; 0: escreva moedas005, " moeda(s) de R$ 0,05"</text>
+  <text x="184" y="1188" font-family="Courier New" font-size="10.5" fill="#333">se moedas001 &gt; 0: escreva moedas001, " moeda(s) de R$ 0,01"</text>
+
+  <line x1="470" y1="1236" x2="470" y2="1260" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── FIM ── -->
+  <rect x="390" y="1260" width="160" height="44" rx="22"
+        fill="#f9c9c5" stroke="#d98880" stroke-width="1.5"/>
+  <text x="470" y="1287" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Fim</text>
+
+</svg>
+</body>
+</html>

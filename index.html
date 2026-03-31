@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Troco Fácil</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<!-- NAV  -->
+<body>
+<nav>
+  <div class="nav-logo"><a href="#hero" class="nav-logo_link">Troco<span>Fácil</span></a></div>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#algoritmo">Algoritmo</a></li>
+    <li><a href="#codigo">Código</a></li>
+    <li><a href="#fluxograma">Fluxograma</a></li>
+    <li><a href="#equipe">Equipe</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-circle"></div>
+
+  <!-- Money SVG Illustration -->
+  <svg class="money-svg" viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="note200" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#1e8449"/>
+        <stop offset="100%" style="stop-color:#0a3d1f"/>
+      </linearGradient>
+      <linearGradient id="note100" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#145a32"/>
+        <stop offset="100%" style="stop-color:#0d4d2a"/>
+      </linearGradient>
+      <linearGradient id="notebg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#27ae60"/>
+        <stop offset="100%" style="stop-color:#1a7a40"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Shadow notes behind -->
+    <rect x="30" y="270" width="300" height="130" rx="10" fill="rgba(0,0,0,0.25)" transform="rotate(-8 180 335)"/>
+    <rect x="180" y="240" width="300" height="130" rx="10" fill="rgba(0,0,0,0.2)" transform="rotate(5 330 305)"/>
+
+    <!-- Note 200 - tilted left -->
+    <g transform="rotate(-8 180 335)">
+      <rect x="30" y="270" width="300" height="130" rx="10" fill="url(#note200)" stroke="rgba(200,168,75,0.4)" stroke-width="1.5"/>
+      <rect x="44" y="284" width="272" height="102" rx="6" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <text x="180" y="348" text-anchor="middle" font-family="serif" font-size="44" font-weight="900" fill="rgba(255,255,255,0.9)">200</text>
+      <text x="60" y="300" font-family="serif" font-size="10" fill="rgba(200,168,75,0.8)">BANCO CENTRAL DO BRASIL</text>
+      <circle cx="260" cy="335" r="28" fill="none" stroke="rgba(200,168,75,0.25)" stroke-width="1"/>
+      <text x="260" y="340" text-anchor="middle" font-family="serif" font-size="11" fill="rgba(200,168,75,0.6)">R$</text>
+      <!-- micro lines -->
+      <line x1="44" y1="360" x2="316" y2="360" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+      <line x1="44" y1="368" x2="200" y2="368" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+    </g>
+
+    <!-- Note 100 - tilted right -->
+    <g transform="rotate(5 330 305)">
+      <rect x="180" y="240" width="300" height="130" rx="10" fill="url(#note100)" stroke="rgba(200,168,75,0.3)" stroke-width="1.5"/>
+      <rect x="194" y="254" width="272" height="102" rx="6" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <text x="330" y="318" text-anchor="middle" font-family="serif" font-size="44" font-weight="900" fill="rgba(255,255,255,0.9)">100</text>
+      <text x="200" y="270" font-family="serif" font-size="10" fill="rgba(200,168,75,0.7)">BANCO CENTRAL DO BRASIL</text>
+      <circle cx="430" cy="305" r="26" fill="none" stroke="rgba(200,168,75,0.2)" stroke-width="1"/>
+      <text x="430" y="310" text-anchor="middle" font-family="serif" font-size="11" fill="rgba(200,168,75,0.5)">R$</text>
+    </g>
+
+    <!-- Main front note -->
+    <rect x="80" y="100" width="360" height="160" rx="12" fill="url(#notebg)" stroke="rgba(200,168,75,0.5)" stroke-width="2"/>
+    <rect x="96" y="116" width="328" height="128" rx="8" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    <!-- denomination -->
+    <text x="260" y="202" text-anchor="middle" font-family="Georgia, serif" font-size="58" font-weight="900" fill="rgba(255,255,255,0.95)">50</text>
+    <!-- top text -->
+    <text x="166" y="136" font-family="serif" font-size="10" fill="rgba(200,168,75,0.9)" letter-spacing="1">BANCO CENTRAL DO BRASIL</text>
+    <!-- bottom text -->
+    <text x="96" y="218" font-family="serif" font-size="9" fill="rgba(255,255,255,0.4)">CINQUENTA REAIS</text>
+    <!-- decorative circle -->
+    <circle cx="360" cy="180" r="38" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="1.5"/>
+    <circle cx="360" cy="180" r="30" fill="none" stroke="rgba(200,168,75,0.15)" stroke-width="1"/>
+    <text x="360" y="185" text-anchor="middle" font-family="serif" font-size="14" fill="rgba(200,168,75,0.7)" font-weight="bold">R$</text>
+    <!-- serial lines -->
+    <line x1="96" y1="142" x2="300" y2="142" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+    <line x1="96" y1="150" x2="240" y2="150" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+
+    <!-- Coins row -->
+    <g>
+      <!-- coin 1 -->
+      <circle cx="110" cy="60" r="38" fill="#b8860b" stroke="#daa520" stroke-width="2"/>
+      <circle cx="110" cy="60" r="30" fill="none" stroke="rgba(255,220,50,0.3)" stroke-width="1"/>
+      <text x="110" y="66" text-anchor="middle" font-family="serif" font-size="15" font-weight="900" fill="rgba(255,240,150,0.9)">1</text>
+      <!-- coin 2 -->
+      <circle cx="200" cy="45" r="32" fill="#a07010" stroke="#c8a000" stroke-width="2"/>
+      <circle cx="200" cy="45" r="24" fill="none" stroke="rgba(255,200,40,0.3)" stroke-width="1"/>
+      <text x="200" y="50" text-anchor="middle" font-family="serif" font-size="12" font-weight="900" fill="rgba(255,235,130,0.9)">50¢</text>
+      <!-- coin 3 -->
+      <circle cx="285" cy="58" r="28" fill="#8a6010" stroke="#b89000" stroke-width="2"/>
+      <text x="285" y="63" text-anchor="middle" font-family="serif" font-size="11" font-weight="900" fill="rgba(255,230,120,0.9)">25¢</text>
+      <!-- coin 4 -->
+      <circle cx="360" cy="50" r="24" fill="#6b4b0e" stroke="#9a7010" stroke-width="2"/>
+      <text x="360" y="55" text-anchor="middle" font-family="serif" font-size="10" font-weight="900" fill="rgba(255,220,100,0.85)">10¢</text>
+      <!-- coin 5 -->
+      <circle cx="425" cy="62" r="20" fill="#5a3e0a" stroke="#856010" stroke-width="1.5"/>
+      <text x="425" y="67" text-anchor="middle" font-family="serif" font-size="9" font-weight="900" fill="rgba(255,215,90,0.8)">5¢</text>
+    </g>
+  </svg>
+
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Decomposição<br>
+      <em>Monetária</em><br>
+      em Notas e Moedas
+    </h1>
+    <p class="hero-sub">
+      Dado um valor em reais, o algoritmo calcula a combinação exata de cédulas e moedas do sistema monetário brasileiro, implementado em C e Python.
+    </p>
+    <div class="hero-btns">
+      <a href="#algoritmo" class="btn-primary">Ver o Algoritmo</a>
+      <a href="#codigo" class="btn-outline">Ver o Código</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div>
+    <div class="section-eyebrow">O Projeto</div>
+    <h2 class="section-title">Uma Abordagem Sistemática para um Problema Clássico</h2>
+    <p class="section-body">
+      O algoritmo recebe um valor monetário qualquer e devolve a menor lista de cédulas e moedas que compõem esse valor — tal como um caixa automático faria. O projeto integra validação de entrada robusta, aritmética inteira para evitar erros de ponto flutuante e saída legível para o usuário.
+    </p>
+    <p class="section-body">
+      Desenvolvido na disciplina de Algoritmos da UNISANTOS, o trabalho explora fundamentos como divisão inteira, operador módulo e estruturas condicionais.
+    </p>
+  </div>
+  <div class="sobre-card">
+    <h3>Por que aritmética inteira?</h3>
+    <p>
+      Trabalhar com <strong>centavos como inteiros</strong> evita os problemas de representação de ponto flutuante. Por exemplo, <code>0.1 + 0.2 ≠ 0.3</code> em muitas linguagens. Multiplicar por 100 e arredondar garante cálculo exato.
+    </p>
+    <div class="sobre-features">
+      <div class="feature-row">
+        <div class="feature-icon"><img src="entrada.png" alt="" class="feature-icon_img"></div>
+        <div class="feature-text">
+          <strong>Validação de entrada</strong>
+          <span>Rejeita letras e valores ≤ 0</span>
+        </div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon"><img src="algoritmo.png" alt="" class="feature-icon_img"></div>
+        <div class="feature-text">
+          <strong>Algoritmo guloso</strong>
+          <span>Sempre usa a maior denominação possível primeiro</span>
+        </div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon"><img src="brasil.png" alt="" class="feature-icon_img"></div>
+        <div class="feature-text">
+          <strong>Sistema Real Brasileiro</strong>
+          <span>Cobre todas as 7 cédulas e 6 moedas vigentes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALGORITMO -->
+<section id="algoritmo">
+  <div class="algo-inner">
+    <div class="algo-header">
+      <div class="section-eyebrow">Passo a Passo</div>
+      <h2 class="section-title">Como o algoritmo funciona</h2>
+    </div>
+    <div class="algo-grid">
+      <div class="algo-card">
+        <div class="algo-step">01</div>
+        <div class="algo-badge">Entrada</div>
+        <h4>Leitura e Validação</h4>
+        <p>O programa solicita um valor ao usuário. Se a entrada contiver letras ou for ≤ 0, uma mensagem de erro é exibida e a execução é encerrada.</p>
+      </div>
+      <div class="algo-card">
+        <div class="algo-step">02</div>
+        <div class="algo-badge">Conversão</div>
+        <h4>Conversão para Centavos</h4>
+        <p>O valor é multiplicado por 100 e arredondado para um inteiro (<code>n</code>). Isso elimina erros de ponto flutuante em todas as operações seguintes.</p>
+      </div>
+      <div class="algo-card">
+        <div class="algo-step">03</div>
+        <div class="algo-badge">Cálculo</div>
+        <h4>Divisão Gulosa</h4>
+        <p>Para cada denominação (R$ 200 → R$ 0,01), calcula-se <code>n ÷ denominação</code> para obter a quantidade, e <code>n mod denominação</code> para o resto.</p>
+      </div>
+      <div class="algo-card">
+        <div class="algo-step">04</div>
+        <div class="algo-badge">Notas</div>
+        <h4>7 Cédulas Processadas</h4>
+        <p>R$ 200, R$ 100, R$ 50, R$ 20, R$ 10, R$ 5 e R$ 2 são calculadas nessa ordem, sempre do maior para o menor valor.</p>
+      </div>
+      <div class="algo-card">
+        <div class="algo-step">05</div>
+        <div class="algo-badge">Moedas</div>
+        <h4>6 Moedas Processadas</h4>
+        <p>R$ 1,00, R$ 0,50, R$ 0,25, R$ 0,10, R$ 0,05 e R$ 0,01 completam a decomposição do restante após as cédulas.</p>
+      </div>
+      <div class="algo-card">
+        <div class="algo-step">06</div>
+        <div class="algo-badge">Saída</div>
+        <h4>Exibição Seletiva</h4>
+        <p>Apenas as denominações com quantidade &gt; 0 são exibidas, produzindo uma saída limpa e objetiva, sem linhas desnecessárias.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓDIGO -->
+<section id="codigo">
+  <div class="code-header">
+    <div class="section-eyebrow">Implementação</div>
+    <h2 class="section-title">Código Fonte</h2>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('c')">C</button>
+    <button class="tab" onclick="switchTab('py')">Python</button>
+  </div>
+
+  <div class="code-panel active" id="panel-c">
+    <pre><span class="cm">/* Decomposição Monetária — C */</span>
+<span class="kw">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">float</span> valor;
+    <span class="fn">printf</span>(<span class="str">"Digite o valor: "</span>);
+    <span class="kw">if</span> (<span class="fn">scanf</span>(<span class="str">"%f"</span>, &amp;valor) != <span class="num">1</span>) {
+        <span class="fn">printf</span>(<span class="str">"Erro: apenas números são permitidos.\n"</span>);
+        <span class="kw">return</span> <span class="num">1</span>;
+    }
+    <span class="kw">if</span> (valor &lt;= <span class="num">0</span>) {
+        <span class="fn">printf</span>(<span class="str">"Erro: valor deve ser maior que zero.\n"</span>);
+        <span class="kw">return</span> <span class="num">1</span>;
+    }
+
+    <span class="cm">/* Converte para centavos inteiros */</span>
+    <span class="kw">int</span> n = (<span class="kw">int</span>)(valor * <span class="num">100</span> + <span class="num">0.5</span>);
+
+    <span class="cm">/* Notas */</span>
+    <span class="kw">int</span> notas200  = n / <span class="num">20000</span>; n %= <span class="num">20000</span>;
+    <span class="kw">int</span> notas100  = n / <span class="num">10000</span>; n %= <span class="num">10000</span>;
+    <span class="kw">int</span> notas50   = n / <span class="num">5000</span>;  n %= <span class="num">5000</span>;
+    <span class="kw">int</span> notas20   = n / <span class="num">2000</span>;  n %= <span class="num">2000</span>;
+    <span class="kw">int</span> notas10   = n / <span class="num">1000</span>;  n %= <span class="num">1000</span>;
+    <span class="kw">int</span> notas5    = n / <span class="num">500</span>;   n %= <span class="num">500</span>;
+    <span class="kw">int</span> notas2    = n / <span class="num">200</span>;   n %= <span class="num">200</span>;
+
+    <span class="cm">/* Moedas */</span>
+    <span class="kw">int</span> moedas1   = n / <span class="num">100</span>;   n %= <span class="num">100</span>;
+    <span class="kw">int</span> moedas050 = n / <span class="num">50</span>;    n %= <span class="num">50</span>;
+    <span class="kw">int</span> moedas025 = n / <span class="num">25</span>;    n %= <span class="num">25</span>;
+    <span class="kw">int</span> moedas010 = n / <span class="num">10</span>;    n %= <span class="num">10</span>;
+    <span class="kw">int</span> moedas005 = n / <span class="num">5</span>;     n %= <span class="num">5</span>;
+    <span class="kw">int</span> moedas001 = n;
+
+    <span class="cm">/* Saída */</span>
+    <span class="kw">if</span> (notas200  &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d nota(s) de R$ 200,00\n"</span>, notas200);
+    <span class="kw">if</span> (notas100  &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d nota(s) de R$ 100,00\n"</span>, notas100);
+    <span class="kw">if</span> (notas50   &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d nota(s) de R$ 50,00\n"</span>,  notas50);
+    <span class="kw">if</span> (notas20   &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d nota(s) de R$ 20,00\n"</span>,  notas20);
+    <span class="kw">if</span> (notas10   &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d nota(s) de R$ 10,00\n"</span>,  notas10);
+    <span class="kw">if</span> (notas5    &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d nota(s) de R$ 5,00\n"</span>,   notas5);
+    <span class="kw">if</span> (notas2    &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d nota(s) de R$ 2,00\n"</span>,   notas2);
+    <span class="kw">if</span> (moedas1   &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d moeda(s) de R$ 1,00\n"</span>,  moedas1);
+    <span class="kw">if</span> (moedas050 &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d moeda(s) de R$ 0,50\n"</span>,  moedas050);
+    <span class="kw">if</span> (moedas025 &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d moeda(s) de R$ 0,25\n"</span>,  moedas025);
+    <span class="kw">if</span> (moedas010 &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d moeda(s) de R$ 0,10\n"</span>,  moedas010);
+    <span class="kw">if</span> (moedas005 &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d moeda(s) de R$ 0,05\n"</span>,  moedas005);
+    <span class="kw">if</span> (moedas001 &gt; <span class="num">0</span>) <span class="fn">printf</span>(<span class="str">"%d moeda(s) de R$ 0,01\n"</span>,  moedas001);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</pre>
+  </div>
+
+  <div class="code-panel" id="panel-py">
+    <pre><span class="cm"># Decomposição Monetária — Python</span>
+
+<span class="kw">try</span>:
+    valor = <span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Digite o valor: "</span>))
+<span class="kw">except</span> ValueError:
+    <span class="fn">print</span>(<span class="str">"Erro: apenas números são permitidos."</span>)
+    <span class="fn">exit</span>()
+
+<span class="kw">if</span> valor &lt;= <span class="num">0</span>:
+    <span class="fn">print</span>(<span class="str">"Erro: valor deve ser maior que zero."</span>)
+    <span class="fn">exit</span>()
+
+<span class="cm"># Converte para centavos inteiros</span>
+n = <span class="fn">int</span>(valor * <span class="num">100</span> + <span class="num">0.5</span>)
+
+<span class="cm"># Notas</span>
+notas200  = n // <span class="num">20000</span>; n %= <span class="num">20000</span>
+notas100  = n // <span class="num">10000</span>; n %= <span class="num">10000</span>
+notas50   = n // <span class="num">5000</span>;  n %= <span class="num">5000</span>
+notas20   = n // <span class="num">2000</span>;  n %= <span class="num">2000</span>
+notas10   = n // <span class="num">1000</span>;  n %= <span class="num">1000</span>
+notas5    = n // <span class="num">500</span>;   n %= <span class="num">500</span>
+notas2    = n // <span class="num">200</span>;   n %= <span class="num">200</span>
+
+<span class="cm"># Moedas</span>
+moedas1   = n // <span class="num">100</span>;   n %= <span class="num">100</span>
+moedas050 = n // <span class="num">50</span>;    n %= <span class="num">50</span>
+moedas025 = n // <span class="num">25</span>;    n %= <span class="num">25</span>
+moedas010 = n // <span class="num">10</span>;    n %= <span class="num">10</span>
+moedas005 = n // <span class="num">5</span>;     n %= <span class="num">5</span>
+moedas001 = n
+
+<span class="cm"># Saída</span>
+<span class="kw">if</span> notas200  &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{notas200} nota(s) de R$ 200,00"</span>)
+<span class="kw">if</span> notas100  &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{notas100} nota(s) de R$ 100,00"</span>)
+<span class="kw">if</span> notas50   &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{notas50} nota(s) de R$ 50,00"</span>)
+<span class="kw">if</span> notas20   &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{notas20} nota(s) de R$ 20,00"</span>)
+<span class="kw">if</span> notas10   &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{notas10} nota(s) de R$ 10,00"</span>)
+<span class="kw">if</span> notas5    &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{notas5} nota(s) de R$ 5,00"</span>)
+<span class="kw">if</span> notas2    &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{notas2} nota(s) de R$ 2,00"</span>)
+<span class="kw">if</span> moedas1   &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{moedas1} moeda(s) de R$ 1,00"</span>)
+<span class="kw">if</span> moedas050 &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{moedas050} moeda(s) de R$ 0,50"</span>)
+<span class="kw">if</span> moedas025 &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{moedas025} moeda(s) de R$ 0,25"</span>)
+<span class="kw">if</span> moedas010 &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{moedas010} moeda(s) de R$ 0,10"</span>)
+<span class="kw">if</span> moedas005 &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{moedas005} moeda(s) de R$ 0,05"</span>)
+<span class="kw">if</span> moedas001 &gt; <span class="num">0</span>: <span class="fn">print</span>(<span class="kw">f</span><span class="str">"{moedas001} moeda(s) de R$ 0,01"</span>)</pre>
+  </div>
+
+<div class="botoes_download">
+  <a href="dinheiro.c" download class="botoes_download-link"><button class="botoes_download--c">Download C</button></a>
+  <a href="dinheiro.py" download class="botoes_download-link"><button class="botoes_download--python">Download Python</button></a>
+</div>
+</section>
+
+<!-- FLUXOGRAMA -->
+<section id="fluxograma">
+  <div class="section-eyebrow">Visualização</div>
+  <h2 class="section-title">Fluxograma do Algoritmo</h2>
+  <p class="flux-sub">Representação visual completa do fluxo de execução, desde a leitura do valor até a exibição das denominações.</p>
+
+  <div class="flux-frame">
+    <svg width="1020" height="1340" viewBox="0 0 1020 1340" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+        </marker>
+      </defs>
+      <text x="510" y="30" text-anchor="middle" font-family="Arial" font-size="20" fill="#333">Cálculo de Troco</text>
+      <text x="510" y="50" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">(notas e moedas)</text>
+      <rect x="390" y="64" width="160" height="44" rx="22" fill="#f9c9c5" stroke="#d98880" stroke-width="1.5"/>
+      <text x="470" y="91" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Início</text>
+      <line x1="470" y1="108" x2="470" y2="132" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <polygon points="280,132 660,132 680,156 660,180 280,180 260,156" fill="#d6e8f8" stroke="#88aad0" stroke-width="1.5"/>
+      <text x="470" y="161" text-anchor="middle" font-family="Arial" font-size="13" fill="#333">"Digite o valor:" → leia(valor)</text>
+      <line x1="470" y1="180" x2="470" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <polygon points="470,210 630,258 470,306 310,258" fill="#fff3cc" stroke="#c8a000" stroke-width="1.5"/>
+      <text x="470" y="252" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Entrada inválida</text>
+      <text x="470" y="268" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">(letras)?</text>
+      <line x1="630" y1="258" x2="730" y2="258" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="676" y="250" text-anchor="middle" font-family="Arial" font-size="11" fill="#c00">Sim</text>
+      <rect x="730" y="232" width="242" height="52" rx="4" fill="#fde8e8" stroke="#d08080" stroke-width="1.5"/>
+      <text x="851" y="253" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">"Erro: apenas números</text>
+      <text x="851" y="271" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">são permitidos." → Fim</text>
+      <line x1="470" y1="306" x2="470" y2="336" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="482" y="326" font-family="Arial" font-size="11" fill="#080">Não</text>
+      <polygon points="470,336 630,384 470,432 310,384" fill="#fff3cc" stroke="#c8a000" stroke-width="1.5"/>
+      <text x="470" y="389" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">valor &lt;= 0?</text>
+      <line x1="630" y1="384" x2="730" y2="384" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="676" y="376" text-anchor="middle" font-family="Arial" font-size="11" fill="#c00">Sim</text>
+      <rect x="730" y="358" width="242" height="52" rx="4" fill="#fde8e8" stroke="#d08080" stroke-width="1.5"/>
+      <text x="851" y="379" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">"Erro: valor deve ser</text>
+      <text x="851" y="397" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">maior que zero." → Fim</text>
+      <line x1="470" y1="432" x2="470" y2="462" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <text x="482" y="452" font-family="Arial" font-size="11" fill="#080">Não</text>
+      <rect x="290" y="462" width="360" height="46" rx="4" fill="#e8d8f8" stroke="#aa88d8" stroke-width="1.5"/>
+      <text x="470" y="480" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">n ← int(valor × 100 + 0,5)</text>
+      <text x="470" y="498" text-anchor="middle" font-family="Arial" font-size="10" fill="#888">(converte para centavos inteiros)</text>
+      <line x1="470" y1="508" x2="470" y2="532" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <rect x="150" y="532" width="640" height="192" rx="4" fill="#e8d8f8" stroke="#aa88d8" stroke-width="1.5"/>
+      <text x="470" y="550" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#5030a0">CÁLCULO DAS NOTAS</text>
+      <line x1="150" y1="556" x2="790" y2="556" stroke="#aa88d8" stroke-width="0.8"/>
+      <text x="162" y="572" font-family="Courier New" font-size="10.5" fill="#333">notas200 ← n div 20000 ;  n ← n mod 20000</text>
+      <text x="162" y="590" font-family="Courier New" font-size="10.5" fill="#333">notas100 ← n div 10000 ;  n ← n mod 10000</text>
+      <text x="162" y="608" font-family="Courier New" font-size="10.5" fill="#333">notas50  ← n div 5000  ;  n ← n mod 5000</text>
+      <text x="162" y="626" font-family="Courier New" font-size="10.5" fill="#333">notas20  ← n div 2000  ;  n ← n mod 2000</text>
+      <text x="162" y="644" font-family="Courier New" font-size="10.5" fill="#333">notas10  ← n div 1000  ;  n ← n mod 1000</text>
+      <text x="162" y="662" font-family="Courier New" font-size="10.5" fill="#333">notas5   ← n div 500   ;  n ← n mod 500</text>
+      <text x="162" y="680" font-family="Courier New" font-size="10.5" fill="#333">notas2   ← n div 200   ;  n ← n mod 200</text>
+      <text x="162" y="712" font-family="Courier New" font-size="10" fill="#888" font-style="italic">(guarda o quociente; n recebe o resto para a próxima denominação)</text>
+      <line x1="470" y1="724" x2="470" y2="748" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <rect x="150" y="748" width="640" height="156" rx="4" fill="#e8d8f8" stroke="#aa88d8" stroke-width="1.5"/>
+      <text x="470" y="766" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#5030a0">CÁLCULO DAS MOEDAS</text>
+      <line x1="150" y1="772" x2="790" y2="772" stroke="#aa88d8" stroke-width="0.8"/>
+      <text x="162" y="788" font-family="Courier New" font-size="10.5" fill="#333">moedas1   ← n div 100  ;  n ← n mod 100</text>
+      <text x="162" y="806" font-family="Courier New" font-size="10.5" fill="#333">moedas050 ← n div 50   ;  n ← n mod 50</text>
+      <text x="162" y="824" font-family="Courier New" font-size="10.5" fill="#333">moedas025 ← n div 25   ;  n ← n mod 25</text>
+      <text x="162" y="842" font-family="Courier New" font-size="10.5" fill="#333">moedas010 ← n div 10   ;  n ← n mod 10</text>
+      <text x="162" y="860" font-family="Courier New" font-size="10.5" fill="#333">moedas005 ← n div 5    ;  n ← n mod 5</text>
+      <text x="162" y="878" font-family="Courier New" font-size="10.5" fill="#333">moedas001 ← n</text>
+      <line x1="470" y1="904" x2="470" y2="928" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <polygon points="170,928 770,928 790,1082 770,1236 170,1236 150,1082" fill="#d6e8f8" stroke="#88aad0" stroke-width="1.5"/>
+      <text x="470" y="948" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#1050a0">ESCREVA  (somente denominações &gt; 0)</text>
+      <line x1="172" y1="954" x2="768" y2="954" stroke="#88aad0" stroke-width="0.8"/>
+      <text x="184" y="972"  font-family="Courier New" font-size="10.5" fill="#333">se notas200  &gt; 0: escreva notas200,  " nota(s) de R$ 200,00"</text>
+      <text x="184" y="990"  font-family="Courier New" font-size="10.5" fill="#333">se notas100  &gt; 0: escreva notas100,  " nota(s) de R$ 100,00"</text>
+      <text x="184" y="1008" font-family="Courier New" font-size="10.5" fill="#333">se notas50   &gt; 0: escreva notas50,   " nota(s) de R$ 50,00"</text>
+      <text x="184" y="1026" font-family="Courier New" font-size="10.5" fill="#333">se notas20   &gt; 0: escreva notas20,   " nota(s) de R$ 20,00"</text>
+      <text x="184" y="1044" font-family="Courier New" font-size="10.5" fill="#333">se notas10   &gt; 0: escreva notas10,   " nota(s) de R$ 10,00"</text>
+      <text x="184" y="1062" font-family="Courier New" font-size="10.5" fill="#333">se notas5    &gt; 0: escreva notas5,    " nota(s) de R$ 5,00"</text>
+      <text x="184" y="1080" font-family="Courier New" font-size="10.5" fill="#333">se notas2    &gt; 0: escreva notas2,    " nota(s) de R$ 2,00"</text>
+      <text x="184" y="1098" font-family="Courier New" font-size="10.5" fill="#333">se moedas1   &gt; 0: escreva moedas1,   " moeda(s) de R$ 1,00"</text>
+      <text x="184" y="1116" font-family="Courier New" font-size="10.5" fill="#333">se moedas050 &gt; 0: escreva moedas050, " moeda(s) de R$ 0,50"</text>
+      <text x="184" y="1134" font-family="Courier New" font-size="10.5" fill="#333">se moedas025 &gt; 0: escreva moedas025, " moeda(s) de R$ 0,25"</text>
+      <text x="184" y="1152" font-family="Courier New" font-size="10.5" fill="#333">se moedas010 &gt; 0: escreva moedas010, " moeda(s) de R$ 0,10"</text>
+      <text x="184" y="1170" font-family="Courier New" font-size="10.5" fill="#333">se moedas005 &gt; 0: escreva moedas005, " moeda(s) de R$ 0,05"</text>
+      <text x="184" y="1188" font-family="Courier New" font-size="10.5" fill="#333">se moedas001 &gt; 0: escreva moedas001, " moeda(s) de R$ 0,01"</text>
+      <line x1="470" y1="1236" x2="470" y2="1260" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+      <rect x="390" y="1260" width="160" height="44" rx="22" fill="#f9c9c5" stroke="#d98880" stroke-width="1.5"/>
+      <text x="470" y="1287" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Fim</text>
+    </svg>
+  </div>
+  <div class="botoes_download">
+    <a href="fluxograma_troco.html" download><button class="botoes_download--c">Download Fluxograma</button></a>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section id="equipe">
+  <div class="section-eyebrow">Autores</div>
+  <h2 class="section-title">Equipe</h2>
+  <p style="color:#5a7060;font-weight:300;margin-top:12px;">Trabalho desenvolvido para a disciplina de Algoritmos — UNISANTOS</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">C</div>
+      <div class="team-name">Caue Nunes</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">G</div>
+      <div class="team-name">Guilherme Filho</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">I</div>
+      <div class="team-name">Icaro Pelegrini</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">N</div>
+      <div class="team-name">Nicolas Tamashiro</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">P</div>
+      <div class="team-name">Paulo Pimenta</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Troco<span>Fácil</span></div>
+  <div class="footer-info">
+    Trabalho Acadêmico · Disciplina de Algoritmos<br>
+    Universidade Católica de Santos — UNISANTOS<br>
+    Implementado em C e Python · 2026
+  </div>
+</footer>
+
+<script>
+function switchTab(lang) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.code-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + lang).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
